@@ -15,29 +15,11 @@
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
         <link rel="stylesheet" href="css/bootstrap.min.css">
-        
+        <link rel="stylesheet" type="text/css" href="css/bootstrap-markdown.min.css">
         <style>
             body {
-              padding-top: 50px;
-              padding-bottom: 20px;
-            }
-            #m-editor {
-              overflow: scroll; 
-              max-height: 300px;
-              height: 250px;
-              background-color: white;
-              border-collapse: separate;
-              border: 1px solid rgb(204, 204, 204);
-              padding: 4px;
-              box-sizing: content-box;
-              -webkit-box-shadow: rgba(0, 0, 0, 0.0745098) 0px 1px 1px 0px inset;
-              box-shadow: rgba(0, 0, 0, 0.0745098) 0px 1px 1px 0px inset;
-              border-top-right-radius: 3px;
-              border-bottom-right-radius: 3px;
-              border-bottom-left-radius: 3px;
-              border-top-left-radius: 3px;
-              overflow: scroll;
-              outline: none;
+                padding-top: 50px;
+                padding-bottom: 20px;
             }
         </style>
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
@@ -74,17 +56,11 @@
       </div>
     </nav>
 
-    <!-- Main jumbotron for a primary marketing message or call to action 
-    <textarea id="main-editor" data-provide="markdown"  rows="15" ></textarea>
-    -->
+    <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
-        <div class="row">
-          <div class="btn-toolbar" data-role="editor-toolbar"
-          data-target="#meditor"></div>
-          <div id="m-editor" contenteditable="true">mmm</div>
-        </div>
-        
+        <textarea id="main-editor" data-provide="markdown"  
+          rows="15" ></textarea>
         <br>
         <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
       </div>
@@ -115,7 +91,7 @@
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 
         <script src="js/vendor/bootstrap.min.js"></script>
-        <script src="js/bootstrap-wysiwyg.js"></script>
+        <script src="js/bootstrap-markdown.js"></script>
 
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
