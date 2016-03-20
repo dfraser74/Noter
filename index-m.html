@@ -45,12 +45,12 @@
         <div id="navbar" class="navbar-collapse collapse">
           <form class="navbar-form navbar-right" role="form">
             <div class="form-group">
-              <input type="text" placeholder="Email" class="form-control">
+              <input id="email" type="text" placeholder="Email" class="form-control">
             </div>
             <div class="form-group">
-              <input type="password" placeholder="Password" class="form-control">
+              <input id="passwd" type="password" placeholder="Password" class="form-control">
             </div>
-            <button type="submit" class="btn btn-success">Sign in</button>
+            <button type="submit" id="sign-in-but" class="btn btn-success">Sign in</button>
           </form>
         </div><!--/.navbar-collapse -->
       </div>
@@ -98,6 +98,27 @@
         <script src="js/main.js"></script>
 
     <script>
+      // TODO - remove to another file
+      (function() {
+        // todo
+      })();
+
+      $("#sign-in-but").click(function() {
+          var ref = new Firebase("https://noter-1.firebaseio.com");
+          var u_email  = $("#email").val();
+          var u_passwd = $("#passwd").val();
+          ref.authWithPassword({
+          email    : u_email,
+          password : u_passwd
+        }, function(error, authData) {
+          if (error) {
+            console.log("Login Failed!", error);
+          } else {
+            console.log("Authenticated successfully with payload:", authData);
+          }
+        });
+        return false;  
+      });
       
    
 
