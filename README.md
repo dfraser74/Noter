@@ -5,7 +5,9 @@ Work in progress - It's not even in alpha mode right now.
 
 [Demo](https://noter-1.firebaseapp.com/)
 
-## ToDo
+![Noter PWA](https://noter-1.firebaseapp.com/noter-1-pwa.png)
+
+## ToDos
 
 ### PWA
 * Add build process (Gulp) - copy, minify etc'.
@@ -21,4 +23,6 @@ Work in progress - It's not even in alpha mode right now.
 
 ### Singin
 * Enable an option to use Facebook, Google, Twitter.
- 
+
+--
+Got more ideas? Please let me know.
