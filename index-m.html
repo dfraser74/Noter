@@ -43,7 +43,7 @@
           <a class="navbar-brand" href="#">Noter</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-          <form class="navbar-form navbar-right" role="form">
+          <form id="login-form" class="navbar-form navbar-right" role="form">
             <div class="form-group">
               <input id="email" type="text" placeholder="Email" class="form-control">
             </div>
@@ -52,6 +52,7 @@
             </div>
             <button type="submit" id="sign-in-but" class="btn btn-success">Sign in</button>
           </form>
+          <div id="logout-div"></div>
         </div><!--/.navbar-collapse -->
       </div>
     </nav>
@@ -59,10 +60,12 @@
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
-        <textarea id="main-editor" data-provide="markdown"  
-          rows="15" ></textarea>
+        <!-- The EDITOR -->
+        <textarea id="main-editor" data-provide="markdown" rows="15" ></textarea>
         <br>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+        <div class="col-lg-3 col-md-3 col-sm-3 alert alert-success" id="save-alert">
+          <strong>Note Saved!</strong>
+        </div>
       </div>
     </div>
 
@@ -70,6 +73,7 @@
       <!-- Example row of columns -->
       <div class="row">
         <div class="col-md-8">
+          <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
           <h2>List Of Notes</h2>
           <p>TODO</p>
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
@@ -97,32 +101,6 @@
         <script src="js/markdown.js"></script>
         <script src="js/main.js"></script>
 
-    <script>
-      // TODO - remove to another file
-      (function() {
-        // todo
-      })();
-
-      $("#sign-in-but").click(function() {
-          var ref = new Firebase("https://noter-1.firebaseio.com");
-          var u_email  = $("#email").val();
-          var u_passwd = $("#passwd").val();
-          ref.authWithPassword({
-          email    : u_email,
-          password : u_passwd
-        }, function(error, authData) {
-          if (error) {
-            console.log("Login Failed!", error);
-          } else {
-            console.log("Authenticated successfully with payload:", authData);
-          }
-        });
-        return false;  
-      });
-      
-   
-
-    </script>
         <!-- Google Analytics -->
         <script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
