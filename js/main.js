@@ -31,7 +31,7 @@
         $("#notes-list").append(
         	'<div class="panel panel-primary"> <div class="panel-heading"> <h3 class="panel-title">' + 
         	noteData.title + " ( " + noteTime + " )" +
-        	'</h3> </div> <div class="panel-body"> '+ noteData.full_note + ' </div> </div>'
+        	'</h3> </div> <div class="panel-body noteedit" data-key="' + key + '"> '+ noteData.full_note + ' </div> </div>'
         	);
       });
     });
@@ -41,6 +41,14 @@
 	$("#logout-but").click(function() {
 		ref.unauth();
 		return false;
+	});
+
+	// enable to edit notes from the list
+	$('body').on('click', '.noteedit', function(event) { 
+		var note = this.innerHTML;
+		$("#main-editor").val(note);	
+		unixTime = this.dataset.key;
+		console.log("going to edit note with key: "+ unixTime);
 	});
 
 	// Init the editor
