@@ -119,5 +119,16 @@
 	  return time;
 	}
 
+	// check for online / lie-fi / offline
+	window.addEventListener("offline", function(e) {
+	  console.log('You are OFFLINE');
+	  $("#online-status").html(" Offline");
+	}, false);
+
+	window.addEventListener("online", function(e) {
+	  console.log("we are back online!");
+	  $("#online-status").html(" Online");
+	}, false);
+	
 
 })();

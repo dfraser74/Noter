@@ -66,22 +66,17 @@
       <div class="container">
         <!-- The EDITOR -->
         <textarea id="main-editor" data-provide="markdown" rows="15" ></textarea>
+        <div id='online-status' class="col-lg-2 col-md-2 col-sm-2 alert alert-warning">
+          &nbsp;&nbsp;Online
+        </div>
+
         <div class="col-lg-3 col-md-3 col-sm-3 alert alert-success" id="save-alert">
           <strong>Note Saved!</strong>
         </div>
       </div>
     </div>
 
-    <!-- Small modal for errors/warnings -->
-    <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
-      <div class="modal-dialog modal-sm">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <div class="modal-content warning-mode">
-         
-        </div>
-      </div>
-    </div>
-
+  <!-- Small modal for errors/warnings -->
   <div id='err-modal'  class="modal fade" tabindex="-1" role="dialog">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -102,7 +97,6 @@
 
     <div class="container">
       <!-- Example row of columns -->
-      
         <h2>Notes</h2>
         <div class="col-lg-10 col-md-10">
           <div id="notes-list"></div>
