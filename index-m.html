@@ -16,6 +16,7 @@
 
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="css/bootstrap-markdown.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <style>
             body {
                 padding-top: 50px;
@@ -24,7 +25,6 @@
         </style>
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="css/main.css">
-
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     </head>
     <body>
@@ -54,6 +54,7 @@
               <input id="passwd" type="password" placeholder="Password" class="form-control">
             </div>
             <button type="submit" id="sign-in-but" class="btn btn-success">Sign in</button>
+            <span id='spin'><i class="fa fa-spinner fa-spin"></i></span>
           </form>
           <div id="logout-div"></div>
         </div><!--/.navbar-collapse -->
@@ -70,6 +71,34 @@
         </div>
       </div>
     </div>
+
+    <!-- Small modal for errors/warnings -->
+    <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+      <div class="modal-dialog modal-sm">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <div class="modal-content warning-mode">
+         
+        </div>
+      </div>
+    </div>
+
+  <div id='err-modal'  class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Oppss... A little problam</h4>
+        </div>
+        <div class="modal-body">
+           <h3>Check again your email/password.</h3>
+          <p>If you can't login please check with @greenido</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
 
     <div class="container">
       <!-- Example row of columns -->

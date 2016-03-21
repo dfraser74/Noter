@@ -1,5 +1,6 @@
 (function() {
 	$("#save-alert").hide();
+	$("#spin").hide();
 
 	// start the connection with firebase DB
 	var ref = new Firebase("https://noter-1.firebaseio.com");
@@ -78,19 +79,23 @@
 		},
 		onBlur: function(e) {
 			console.log("-- Not blur triggered --");
+			$("#err-modal").modal('show');
 		}
 	});
 
 	// Sign in
 	$("#sign-in-but").click(function() {
+			$("#spin").show();
 	    var u_email  = $("#email").val();
 	    var u_passwd = $("#passwd").val();
 	    ref.authWithPassword({
 	    email    : u_email,
 	    password : u_passwd
 	  }, function(error, authData) {
+	  	$("#spin").hide();
 	    if (error) {
 	      console.log("Login Failed!", error);
+	      $("#err-modal").modal('show');
 	    } else {
 	      console.log("Authenticated successfully with payload:", authData);
 	    }
