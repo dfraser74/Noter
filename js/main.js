@@ -20,11 +20,17 @@
 	function readNotes(authData) {
     var readRef = new Firebase("https://noter-1.firebaseio.com/users/" + authData.uid);
     readRef.on("value", function(snapshot) {
-      console.log("The notes: " + JSON.stringify(snapshot.val()));
+      //console.log("The notes: " + JSON.stringify(snapshot.val()));
       snapshot.forEach(function(childSnapshot) {
         var key = childSnapshot.key();
+        var noteTime = timeConverter(key);
         var noteData = childSnapshot.val();
-        console.log("key: "+ key + " data: "+noteData);
+        //console.log("key: "+ key + " data: "+noteData);
+        $("#notes-list").append(
+        	'<div class="panel panel-primary"> <div class="panel-heading"> <h3 class="panel-title">' + 
+        	noteData.title + " ( " + noteTime + " )" +
+        	'</h3> </div> <div class="panel-body"> '+ noteData.full_note + ' </div> </div>'
+        	);
       });
     });
 	}
@@ -40,6 +46,7 @@
 		autofocus:true, 
 		savable:true,
 		onSave: function(e) {
+			// TODO: take it to a function
 			console.log("Saving '" + e.getContent() + "'...");
 			ref.onAuth(function(authData) {
 			  if (authData) {
@@ -90,5 +97,22 @@
 	  });
 	  return false;  
 	});
+
+	//
+	// utils
+	//
+	function timeConverter(UNIX_timestamp){
+	  var a = new Date(UNIX_timestamp * 1000);
+	  var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+	  var year = a.getFullYear();
+	  var month = months[a.getMonth()];
+	  var date = a.getDate();
+	  var hour = a.getHours();
+	  var min = a.getMinutes();
+	  var sec = a.getSeconds();
+	  var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec ;
+	  return time;
+	}
+
 
 })();
