@@ -1,5 +1,7 @@
 (function() {
 	$("#save-alert").hide();
+	$("#spin").hide();
+	var unixTime = Math.floor(Date.now() / 1000);
 
 	// start the connection with firebase DB
 	var ref = new Firebase("https://noter-1.firebaseio.com");
@@ -19,7 +21,7 @@
 	//
 	function readNotes(authData) {
     var readRef = new Firebase("https://noter-1.firebaseio.com/users/" + authData.uid);
-    readRef.on("value", function(snapshot) {
+    readRef.orderByKey().on("value", function(snapshot) {
       //console.log("The notes: " + JSON.stringify(snapshot.val()));
       snapshot.forEach(function(childSnapshot) {
         var key = childSnapshot.key();
@@ -29,7 +31,7 @@
         $("#notes-list").append(
         	'<div class="panel panel-primary"> <div class="panel-heading"> <h3 class="panel-title">' + 
         	noteData.title + " ( " + noteTime + " )" +
-        	'</h3> </div> <div class="panel-body"> '+ noteData.full_note + ' </div> </div>'
+        	'</h3> </div> <div class="panel-body noteedit" data-key="' + key + '"> '+ noteData.full_note + ' </div> </div>'
         	);
       });
     });
@@ -39,6 +41,14 @@
 	$("#logout-but").click(function() {
 		ref.unauth();
 		return false;
+	});
+
+	// enable to edit notes from the list
+	$('body').on('click', '.noteedit', function(event) { 
+		var note = this.innerHTML;
+		$("#main-editor").val(note);	
+		unixTime = this.dataset.key;
+		console.log("going to edit note with key: "+ unixTime);
 	});
 
 	// Init the editor
@@ -51,7 +61,6 @@
 			ref.onAuth(function(authData) {
 			  if (authData) {
 			  	console.log("User " + authData.uid + " is logged in with " + authData.provider);
-			  	var unixTime = Math.floor(Date.now() / 1000);
 			  	var fullDate = new Date().toString();
 			  	var lines = $('textarea').val().split('\n');
  					var title = lines[0];
@@ -61,6 +70,7 @@
 				    note_date: fullDate,
 				    full_note: e.getContent()
 					});
+					$("#save-alert").html("Note Saved!");
 					$("#save-alert").show();
           $("#save-alert").fadeTo(1000, 500).slideUp(500, function(){
     	    	$("#save-alert").hide();
@@ -69,7 +79,12 @@
 			  }
 			  else {
 			  	console.log("User is logged out");
-			  	// TODO: show the login form
+			  	$("#save-alert").html("You are logged out!");
+					$("#save-alert").show();
+          $("#save-alert").fadeTo(1000, 500).slideUp(500, function(){
+    	    	$("#save-alert").hide();
+          });  
+			  	
 			  }
 			});
 		},
@@ -83,14 +98,17 @@
 
 	// Sign in
 	$("#sign-in-but").click(function() {
+			$("#spin").show();
 	    var u_email  = $("#email").val();
 	    var u_passwd = $("#passwd").val();
 	    ref.authWithPassword({
 	    email    : u_email,
 	    password : u_passwd
 	  }, function(error, authData) {
+	  	$("#spin").hide();
 	    if (error) {
 	      console.log("Login Failed!", error);
+	      $("#err-modal").modal('show');
 	    } else {
 	      console.log("Authenticated successfully with payload:", authData);
 	    }
@@ -114,5 +132,16 @@
 	  return time;
 	}
 
+	// check for online / lie-fi / offline
+	window.addEventListener("offline", function(e) {
+	  console.log('You are OFFLINE');
+	  $("#online-status").html(" Offline");
+	}, false);
+
+	window.addEventListener("online", function(e) {
+	  console.log("we are back online!");
+	  $("#online-status").html(" Online");
+	}, false);
+	
 
 })();

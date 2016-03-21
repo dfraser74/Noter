@@ -16,6 +16,7 @@
 
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="css/bootstrap-markdown.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <style>
             body {
                 padding-top: 50px;
@@ -24,7 +25,6 @@
         </style>
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="css/main.css">
-
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     </head>
     <body>
@@ -54,8 +54,12 @@
               <input id="passwd" type="password" placeholder="Password" class="form-control">
             </div>
             <button type="submit" id="sign-in-but" class="btn btn-success">Sign in</button>
+            <span id='spin'><i class="fa fa-spinner fa-spin"></i></span>
           </form>
           <div id="logout-div"></div>
+          <form class='navbar-form navbar-right' role='form'>
+            <button id="online-status" type="button" class="btn btn-info">Online</button>
+          </form>
         </div><!--/.navbar-collapse -->
       </div>
     </nav>
@@ -65,33 +69,46 @@
       <div class="container">
         <!-- The EDITOR -->
         <textarea id="main-editor" data-provide="markdown" rows="15" ></textarea>
+        
+
         <div class="col-lg-3 col-md-3 col-sm-3 alert alert-success" id="save-alert">
           <strong>Note Saved!</strong>
         </div>
       </div>
     </div>
 
+  <!-- Small modal for errors/warnings -->
+  <div id='err-modal'  class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Oppss... A little problam</h4>
+        </div>
+        <div class="modal-body">
+           <h3>Check again your email/password.</h3>
+          <p>If you can't login please check with @greenido</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
     <div class="container">
       <!-- Example row of columns -->
-      
         <h2>Notes</h2>
         <div class="col-lg-10 col-md-10">
           <div id="notes-list"></div>
           <br>
         </div>
 
-        <br>
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>TODO: get more notes </p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-       </div>
-      
-
       <hr>
-
       <footer>
-        <p>&copy; @greenido 2016</p>
+        <div class="col-md-4">
+          <p><a href="https://twitter.com/greenido">@greenido</a> 2016 &copy; </p>
+        </div>
       </footer>
     </div> <!-- /container -->        
 
