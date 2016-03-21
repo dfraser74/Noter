@@ -1,6 +1,7 @@
 (function() {
 	$("#save-alert").hide();
 	$("#spin").hide();
+	var unixTime = Math.floor(Date.now() / 1000);
 
 	// start the connection with firebase DB
 	var ref = new Firebase("https://noter-1.firebaseio.com");
@@ -20,7 +21,7 @@
 	//
 	function readNotes(authData) {
     var readRef = new Firebase("https://noter-1.firebaseio.com/users/" + authData.uid);
-    readRef.on("value", function(snapshot) {
+    readRef.orderByKey().on("value", function(snapshot) {
       //console.log("The notes: " + JSON.stringify(snapshot.val()));
       snapshot.forEach(function(childSnapshot) {
         var key = childSnapshot.key();
@@ -52,7 +53,6 @@
 			ref.onAuth(function(authData) {
 			  if (authData) {
 			  	console.log("User " + authData.uid + " is logged in with " + authData.provider);
-			  	var unixTime = Math.floor(Date.now() / 1000);
 			  	var fullDate = new Date().toString();
 			  	var lines = $('textarea').val().split('\n');
  					var title = lines[0];
@@ -62,6 +62,7 @@
 				    note_date: fullDate,
 				    full_note: e.getContent()
 					});
+					$("#save-alert").html("Note Saved!");
 					$("#save-alert").show();
           $("#save-alert").fadeTo(1000, 500).slideUp(500, function(){
     	    	$("#save-alert").hide();
@@ -70,7 +71,12 @@
 			  }
 			  else {
 			  	console.log("User is logged out");
-			  	// TODO: show the login form
+			  	$("#save-alert").html("You are logged out!");
+					$("#save-alert").show();
+          $("#save-alert").fadeTo(1000, 500).slideUp(500, function(){
+    	    	$("#save-alert").hide();
+          });  
+			  	
 			  }
 			});
 		},
@@ -79,7 +85,6 @@
 		},
 		onBlur: function(e) {
 			console.log("-- Not blur triggered --");
-			$("#err-modal").modal('show');
 		}
 	});
 

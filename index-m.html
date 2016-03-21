@@ -57,6 +57,9 @@
             <span id='spin'><i class="fa fa-spinner fa-spin"></i></span>
           </form>
           <div id="logout-div"></div>
+          <form class='navbar-form navbar-right' role='form'>
+            <button id="online-status" type="button" class="btn btn-info">Online</button>
+          </form>
         </div><!--/.navbar-collapse -->
       </div>
     </nav>
@@ -66,9 +69,7 @@
       <div class="container">
         <!-- The EDITOR -->
         <textarea id="main-editor" data-provide="markdown" rows="15" ></textarea>
-        <div id='online-status' class="col-lg-2 col-md-2 col-sm-2 alert alert-warning">
-          &nbsp;&nbsp;Online
-        </div>
+        
 
         <div class="col-lg-3 col-md-3 col-sm-3 alert alert-success" id="save-alert">
           <strong>Note Saved!</strong>
