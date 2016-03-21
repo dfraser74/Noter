@@ -43,6 +43,9 @@
           <a class="navbar-brand" href="#">Noter</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
+          <!--<ul class="nav navbar-nav">
+            <li><a href="#notes-list">Notes</a></li>
+          </ul>-->
           <form id="login-form" class="navbar-form navbar-right" role="form">
             <div class="form-group">
               <input id="email" type="text" placeholder="Email" class="form-control">
@@ -62,7 +65,6 @@
       <div class="container">
         <!-- The EDITOR -->
         <textarea id="main-editor" data-provide="markdown" rows="15" ></textarea>
-        <br>
         <div class="col-lg-3 col-md-3 col-sm-3 alert alert-success" id="save-alert">
           <strong>Note Saved!</strong>
         </div>
@@ -71,11 +73,10 @@
 
     <div class="container">
       <!-- Example row of columns -->
-      <div class="row">
+      
+        <h2>Notes</h2>
         <div class="col-lg-10 col-md-10">
-          <h2>Notes</h2>
           <div id="notes-list"></div>
-
           <br>
           <div class="panel panel-primary"> 
             <div class="panel-heading"> 
@@ -93,7 +94,7 @@
           <p>TODO: get more notes </p>
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
        </div>
-      </div>
+      
 
       <hr>
 
