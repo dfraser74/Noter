@@ -9,7 +9,7 @@
         <meta name="author" content="Green Ido | @greenido | plus.google.com/+greenido">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <title>Noter</title>
+        <title>Noter - PWA</title>
         <meta name="description" content="A note taking PWA">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -44,14 +44,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Noter</a>
+          <a class="navbar-brand" href="#">Noter - PWA</a>
         </div>
       </div>
     </nav>
 
-    <!-- Main jumbotron for a primary marketing message or call to action 
-    <textarea id="main-editor" data-provide="markdown"  rows="15" ></textarea>
-    -->
     <div class="jumbotron">
       <div class="container">
         <div class="row">
@@ -65,14 +62,33 @@
     <div class="container">
       <hr>
       <footer>
-        <p>&copy; @greenido 2016</p>
+        <p><a href="https://twitter.com/greenido" target="_blank">@greenido</a> 2016</p>
       </footer>
     </div> <!-- /container -->        
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
       <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 
       <script src="js/vendor/bootstrap.min.js"></script>
-       
+      <script type="text/javascript">
+        var oldVal = "";
+        (function() {
+          if (localStorage.getItem("Noter")) {
+            oldVal = localStorage.getItem("Noter");
+            $("#main-editor").val(oldVal);
+          }
+        })();
+
+        $("#main-editor").on("change keyup paste", function() {
+          var currentVal = $(this).val();
+          if(currentVal == oldVal) {
+              return;
+          }
+          oldVal = currentVal;
+          // save the note
+          localStorage.setItem("Noter", currentVal);
+          console.log("saved: " + currentVal);
+        });
+      </script>
        
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
