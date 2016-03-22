@@ -10,7 +10,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <title>Noter</title>
-        <meta name="description" content="">
+        <meta name="description" content="A note taking PWA">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
@@ -21,23 +21,9 @@
               padding-top: 50px;
               padding-bottom: 20px;
             }
-            #m-editor {
-              overflow: scroll; 
-              max-height: 300px;
-              height: 250px;
-              background-color: white;
-              border-collapse: separate;
-              border: 1px solid rgb(204, 204, 204);
-              padding: 4px;
-              box-sizing: content-box;
-              -webkit-box-shadow: rgba(0, 0, 0, 0.0745098) 0px 1px 1px 0px inset;
-              box-shadow: rgba(0, 0, 0, 0.0745098) 0px 1px 1px 0px inset;
-              border-top-right-radius: 3px;
-              border-bottom-right-radius: 3px;
-              border-bottom-left-radius: 3px;
-              border-top-left-radius: 3px;
-              overflow: scroll;
-              outline: none;
+            #main-editor {
+              width:100%;
+              height:100%;
             }
         </style>
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
@@ -60,17 +46,6 @@
           </button>
           <a class="navbar-brand" href="#">Noter</a>
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <form class="navbar-form navbar-right" role="form">
-            <div class="form-group">
-              <input type="text" placeholder="Email" class="form-control">
-            </div>
-            <div class="form-group">
-              <input type="password" placeholder="Password" class="form-control">
-            </div>
-            <button type="submit" class="btn btn-success">Sign in</button>
-          </form>
-        </div><!--/.navbar-collapse -->
       </div>
     </nav>
 
@@ -80,46 +55,25 @@
     <div class="jumbotron">
       <div class="container">
         <div class="row">
-          <div class="btn-toolbar" data-role="editor-toolbar"
-          data-target="#meditor"></div>
-          <div id="m-editor" contenteditable="true">mmm</div>
+          <!-- The EDITOR -->
+          <textarea id="main-editor" rows="15" ></textarea>
         </div>
-        
         <br>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
       </div>
     </div>
 
     <div class="container">
-      <!-- Example row of columns -->
-      <div class="row">
-        <div class="col-md-8">
-          <h2>List Of Notes</h2>
-          <p>TODO</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-       </div>
-      </div>
-
       <hr>
-
       <footer>
         <p>&copy; @greenido 2016</p>
       </footer>
     </div> <!-- /container -->        
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+      <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 
-        <script src="js/vendor/bootstrap.min.js"></script>
-        <script src="js/bootstrap-wysiwyg.js"></script>
-
-       <!-- <script src="js/plugins.js"></script> -->
+      <script src="js/vendor/bootstrap.min.js"></script>
        
-        <script src="js/main.js"></script>
+       
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
