@@ -4,7 +4,10 @@ A PWA for note taking.
 Work in progress - It's not even in alpha mode right now.
 
 * [Demo - Basic](https://noter-1.firebaseapp.com/index-pwa.html)
-* [Demo - Firebase](https://noter-1.firebaseapp.com/)
+* [Demo - Firebase](https://noter-1.firebaseapp.com/) 
+You can use: 
+  * User: demo@demo.com 
+  * Password: demo
 
 ![Noter PWA](https://noter-1.firebaseapp.com/noter-1-pwa.png)
 
