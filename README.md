@@ -5,6 +5,7 @@ Work in progress - It's not even in alpha mode right now.
 
 * [Demo - Basic](https://noter-1.firebaseapp.com/index-pwa.html)
 * [Demo - Firebase](https://noter-1.firebaseapp.com/) 
+
 You can use: 
   * User: demo@demo.com 
   * Password: demo
@@ -14,13 +15,13 @@ You can use:
 ## ToDos
 
 ### PWA
-* Add build process (Gulp) - copy, minify etc'.
+* [] Add build process (Gulp) - copy, minify etc'.
 * [done] Use Service workers for caching and local saving of notes.
-* Add versions for the SW handling of assets.
-* Sync with you have connection with firebase.
-* Add notification for 'wi-fi' or lie-fi.
+* [] Add versions for the SW handling of assets.
+* [] Sync with you have connection with firebase.
+* [] Add notification for 'wi-fi' or lie-fi.
 * [done] Add manifest.
-* Add push notifications on special notes that you mark with "todo".
+* [] Add push notifications on special notes that you mark with "todo".
 
 ### Note handling
 * Change the order of the notes (last should be on top of the list).
