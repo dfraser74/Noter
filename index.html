@@ -11,7 +11,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="author" content="Green Ido | @greenido | plus.google.com/+greenido">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Noter - PWA</title>
+  <title>Noter2</title>
   <meta name="description" content="A note taking PWA">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -19,12 +19,13 @@
   <style>
   body {
     padding-top: 50px;
-    padding-bottom: 20px;
+
   }
-  
   #main-editor {
     width: 100%;
     height: 100%;
+    background: rgba(21, 19, 19, 0.85);
+    color: white;
   }
   </style>
   <link rel="stylesheet" href="css/bootstrap-theme.min.css">
@@ -61,18 +62,20 @@
         <br> Yes - It's saved autoamticlly.</p>
     </div>
   </div>
-  <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
+  
   <div class="row">
-    <div class="col-xs-6 col-md-4"></div>
+    <div class="col-xs-3 col-md-2"></div>
     <div class="col-xs-6 col-md-4">
+      <img src="img/pencil-70.png" alt="pencil logo for our noter progressive web app">
       <a href="https://twitter.com/greenido" target="_blank">@greenido</a> 2016
     </div>
     <div class="col-xs-6 col-md-4"></div>
   </div>
-  <!-- JS -->
+
+  <!-- JS stuff -->
   <script src="js/vendor/jquery-1.11.2.min.js"></script>
   <script src="js/vendor/bootstrap.min.js"></script>
-  <script type="text/javascript">
+  <script>
   var oldVal = "";
   (function() {
     if (localStorage.getItem("Noter")) {
