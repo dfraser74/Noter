@@ -15,6 +15,29 @@
   <meta name="description" content="A note taking PWA">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel=manifest href=manifest.json>
+  <meta name=mobile-web-app-capable content=yes>
+  <meta name=application-name content="Noter">
+  <link rel=icon sizes=192x192 href=img/pencil-192.png>
+  <meta name=apple-mobile-web-app-capable content=yes>
+  <meta name=apple-mobile-web-app-status-bar-style content=black>
+  <meta name=apple-mobile-web-app-title content="Noter">
+  <link rel=apple-touch-icon href=img/pencil-192.png>
+  <meta name=msapplication-TileImage content=img/pencil-144.png>
+  <meta name=msapplication-TileColor content=#2196F3>
+  <meta name=theme-color content=#2196F3>
+  <meta property=og:title content="Noter">
+  <meta property=og:type content=website>
+  <meta property=og:image content=https://noter-1.firebaseapp.com/img/pencil-192.png>
+  <meta property=og:url content="https://noter-1.firebaseapp.com/">
+  <meta property=og:description content="The best way to take notes. No install just use it right away in your browser! Smile!">
+  <meta name=twitter:card content=summary>
+  <meta name=twitter:url content="https://noter-1.firebaseapp.com">
+  <meta name=twitter:title content="Noter">
+  <meta name=twitter:description content="The best way to take notes. No install just use it right away in your browser! Smile!">
+  <meta name=twitter:image content=https://noter-1.firebaseapp.com/img/pencil-192.png>
+  <meta name=twitter:creator content=@greenido>
+
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <style>
   body {
@@ -59,7 +82,7 @@
       </div>
       <p>You can just focus and type.
         <br> It will always be here, with (or without) connection.
-        <br> Yes - It's saved autoamticlly.</p>
+        <br> Yes - It's saved automatically.</p>
     </div>
   </div>
   
@@ -94,8 +117,18 @@
     localStorage.setItem("Noter", currentVal);
     console.log("saved: " + currentVal);
   });
-  </script>
-  <script>
+  
+  if('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js', { scope: '/' })
+      .then(function(registration) { 
+        console.log("Service Worker Registered"); 
+    });
+      
+    navigator.serviceWorker.ready.then(function(registration) { 
+      console.log("Service Worker Ready");
+    });
+  }
+
   (function(b, o, i, l, e, r) {
     b.GoogleAnalyticsObject = l;
     b[l] || (b[l] =
