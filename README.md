@@ -12,10 +12,11 @@ Work in progress - It's not even in alpha mode right now.
 
 ### PWA
 * Add build process (Gulp) - copy, minify etc'.
-* Use Service workers for caching and local saving of notes.
+* [done] Use Service workers for caching and local saving of notes.
+* Add versions for the SW handling of assets.
 * Sync with you have connection with firebase.
 * Add notification for 'wi-fi' or lie-fi.
-* Add manifest.
+* [done] Add manifest.
 * Add push notifications on special notes that you mark with "todo".
 
 ### Note handling
