@@ -1,16 +1,17 @@
 /* ==========================================================================
-	Ido's custom styles
-	Date: March 2016
+  Ido's custom styles
+  Date: March 2016
 ========================================================================== */
+
 .fa {
-	background: wheat;
+  background: wheat;
 }
 
 .warning-mode {
-	padding: 2em;
+  padding: 2em;
 }
 
 .remove-note {
-	position: relative;
-	left: 2em;
+  position: relative;
+  left: 2em;
 }
