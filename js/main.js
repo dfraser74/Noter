@@ -37,7 +37,6 @@
         	'</h3> </div> <div class="panel-body noteedit" data-key="' + key + '"> '+ noteData.full_note + ' </div> </div>'
         	);
       });
-
     });
 	}
 

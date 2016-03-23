@@ -3,7 +3,8 @@
 A PWA for note taking.
 Work in progress - It's not even in alpha mode right now.
 
-[Demo](https://noter-1.firebaseapp.com/)
+* [Demo - Basic](https://noter-1.firebaseapp.com/index-pwa.html)
+* [Demo - Firebase](https://noter-1.firebaseapp.com/)
 
 ![Noter PWA](https://noter-1.firebaseapp.com/noter-1-pwa.png)
 
