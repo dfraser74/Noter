@@ -10,7 +10,7 @@ You can use:
   * User: demo@demo.com 
   * Password: demo
 
-![Noter PWA](https://noter-1.firebaseapp.com/noter-1-pwa.png)
+![Noter PWA](https://noter-1.firebaseapp.com/noter-1-pwa-x.png)
 
 ## ToDos
 
