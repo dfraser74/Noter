@@ -8,12 +8,15 @@
 // Until all the browsers will give us the APIs to cache.
 importScripts('/cache-polyfill.js');
 
+var cacheName = "noter-v3";
+
 //
 // Install our web app and its assets
 //
 self.addEventListener('install', function(e) {
   e.waitUntil(
-    caches.open('noter').then(function(cache) {
+    caches.open(cacheName).then(function(cache) {
+      console.log("Noter is caching it's files under: " + cacheName);
       return cache.addAll([
         '/',
         '/index.html',
@@ -31,9 +34,20 @@ self.addEventListener('install', function(e) {
   );
 });
 
+
 //
-self.addEventListener('activate', function(event) {
-  event.waitUntil(self.clients.claim());
+self.addEventListener('activate', function(e) {
+  console.log('[Noter SW] Activate');
+  e.waitUntil(
+    caches.keys().then(function(keyList) {
+      return Promise.all(keyList.map(function(key) {
+        console.log('[Noter SW] Removing old cache', key);
+        if (key !== cacheName) {
+          return caches.delete(key);
+        }
+      }));
+    })
+  );
 });
 
 //

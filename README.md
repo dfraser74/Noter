@@ -16,11 +16,11 @@ You can use:
 
 ### PWA
 * [ ] Add build process (Gulp) - copy, minify etc'.
-* [done] Use Service workers for caching and local saving of notes.
-* [ ] Add versions for the SW handling of assets.
+* [x] Use Service workers for caching and local saving of notes.
+* [x] Add versions for the SW handling of assets.
 * [ ] Sync with you have connection with firebase.
 * [ ] Add notification for 'wi-fi' or lie-fi.
-* [done] Add manifest.
+* [x] Add manifest.
 * [ ] Add push notifications on special notes that you mark with "todo".
 
 ### Note handling

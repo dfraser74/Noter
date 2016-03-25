@@ -8,7 +8,7 @@
 // Until all the browsers will give us the APIs to cache.
 importScripts('/cache-polyfill.js');
 
-var cacheName = "noter-v2";
+var cacheName = "noter-v3";
 
 //
 // Install our web app and its assets
