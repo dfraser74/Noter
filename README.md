@@ -31,4 +31,5 @@ You can use:
 * Enable an option to use Facebook, Google, Twitter.
 
 --
-Got more ideas? Please let me know.
+Got more ideas? 
+Please let me know.
