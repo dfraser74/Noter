@@ -81,6 +81,7 @@
         <!-- The EDITOR -->
         <textarea id="main-editor" rows="15"></textarea>
       </div>
+      <button id="copy-button" type="button" class="btn btn-success">Copy</button>
       <div class="alert alert-warning alert-dismissible" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         You can just focus and type.<br>
@@ -119,9 +120,19 @@
     oldVal = currentVal;
     // save the note
     localStorage.setItem("Noter", currentVal);
-    console.log("saved: " + currentVal);
+    //console.log("saved: " + currentVal);
   });
+
+  $("#copy-button").click(function() {
+      ($("#main-editor").val()).select();
+      document.execCommand("copy");
+      // todo - show a temp alerts that confirm it was copied
+      console.log("text was copied");
+  });
+
   
+  
+  // Service worker
   if('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/sw.js', { scope: '/' })
       .then(function(registration) { 
