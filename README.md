@@ -23,7 +23,7 @@ You can use:
 * [x] Add manifest.
 * [ ] Add push notifications on special notes that you mark with "todo".
 
-### Note handling
+### Noter Full - Notes Handling
 * Change the order of the notes (last should be on top of the list).
 * Let the user search for notes.
 
@@ -31,5 +31,6 @@ You can use:
 * Enable an option to use Facebook, Google, Twitter.
 
 --
-Got more ideas? 
+*Got more ideas?*
 Please let me know.
+![ideas-please](https://noter-1.firebaseapp.com/ideas-minions.png)
