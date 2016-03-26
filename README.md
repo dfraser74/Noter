@@ -3,8 +3,8 @@
 A PWA for note taking.
 Currently it's a "Work in progress".
 
-* [Demo - Basic](https://noter-1.firebaseapp.com/index-pwa.html)
-* [Demo - Firebase](https://noter-1.firebaseapp.com/) 
+* [Demo - Basic](https://noter-1.firebaseapp.com/)
+* [Demo - Firebase](https://noter-1.firebaseapp.com/index-m.html) 
 
 You can use: 
   * User: demo@demo.com 
