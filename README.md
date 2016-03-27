@@ -18,17 +18,17 @@ You can use:
 * [ ] Add build process (Gulp) - copy, minify etc'.
 * [x] Use Service workers for caching and local saving of notes.
 * [x] Add versions for the SW handling of assets.
-* [ ] Sync with you have connection with firebase.
-* [ ] Add notification for 'wi-fi' or lie-fi.
 * [x] Add manifest.
 * [ ] Add push notifications on special notes that you mark with "todo".
 
-### Noter Full - Notes Handling
-* Change the order of the notes (last should be on top of the list).
-* Let the user search for notes.
+### Noter Full
+* [ ] Change the order of the notes (last should be on top of the list).
+* [ ] Let the user search for notes.
+* [ ] Sync with you have connection with firebase.
+* [x] Add notification for 'wi-fi' or lie-fi.
 
 ### Sing-in
-* Enable an option to use Facebook, Google, Twitter.
+* [ ] Enable an option to use Facebook, Google, Twitter.
 
 --
 *Got more ideas?*
