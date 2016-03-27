@@ -3,12 +3,13 @@
 A PWA for note taking.
 Currently it's a "Work in progress".
 
-* [Demo - Basic](https://noter-1.firebaseapp.com/)
-* [Demo - Firebase](https://noter-1.firebaseapp.com/index-m.html) 
+* [Basic version](https://noter-1.firebaseapp.com/) - It contain service worker for off-line, manifest and a simple text area. All the basic functionality, that allow you to take notes the are saved automatically with or without connection. I used jQuery and bootstrap to keep it simple and to make it easy to extended it in the future.
 
+* [Full version with Firebase](https://noter-1.firebaseapp.com/index-m.html) - Similar to the basic version, but this time, I added the ability to save the notes in Firebase. You can add notes, edit current ones and (of course) delete the ones that you don't really like. The text area was upgrades to a markdown editor. A simple one, but still something that will give you the ability to get a preview of the note in a markdown.
 You can use: 
   * User: demo@demo.com 
   * Password: demo
+In order to try it out.
 
 ![Noter PWA](https://noter-1.firebaseapp.com/noter-1-pwa-x.png)
 
